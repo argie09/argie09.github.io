@@ -138,7 +138,7 @@
 		});
 
 		$(document).on('input','#link-to',function() {
-			var link = ytParse($('#link-react').val());
+			var link = ytParse($('#link-to').val());
 			if (link.id) {
 			    linkTo = link;
 			    genShareLink();
