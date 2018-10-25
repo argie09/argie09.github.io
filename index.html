@@ -42,13 +42,6 @@
 		.spacer-2 {
 			margin-top: 30px;
 		}
-		#link-share a {
-			background-color: #fff000;
-			color: #000;
-			border-style: dashed;
-    		border-radius: 3px;
-    		padding: 10px
-		}
 	</style>
 </head>
 <body>
@@ -68,6 +61,7 @@
 		        }
 		    return urlparameter;
 		}
+
 		// This code loads the Youtube IFrame Player API code asynchronously.
 		var tag = document.createElement('script');
 		tag.src = "https://www.youtube.com/iframe_api";
@@ -91,7 +85,6 @@
 				progressTracker = setInterval(progress, 1000);
 				$('#videos').show();
 			} else showLinker();
-			//else alert("Parameters missing!"); //show link generator
 		}
 
 		function addPlayer(idx,element,videoId) {
@@ -153,7 +146,7 @@
 
 		$(document).on('input','#link-react',function() {
 			var link = ytParse($('#link-react').val());
-			if (link.id.length == 11 && link.start > 0) {
+			if (link.id.length === 11 && link.start > 0) {
 			    linkReact = link;
 			    genGoLink();
 			}
@@ -161,7 +154,7 @@
 
 		$(document).on('input','#link-to',function() {
 			var link = ytParse($('#link-to').val());
-			if (link.id.length == 11) {
+			if (link.id.length === 11) {
 			    linkTo = link;
 			    genGoLink();
 			}
